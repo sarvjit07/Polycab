@@ -31,12 +31,16 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
+            'phone' => 'required|string|max:15',
+            'role' => 'required|string|in:student,teacher,boy,girl',
+            'password' => 'required|string|min:4|confirmed',
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
+            'role' => $request->role,
             'password' => Hash::make($request->password),
             'is_admin' => false, // Ensure the created user is not an admin
         ]);

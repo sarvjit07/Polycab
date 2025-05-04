@@ -13,8 +13,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone', // Add this field
+        'role',  // Add this field
         'password',
-        'is_admin', // Add this field
+        'is_admin',
     ];
 
     protected $hidden = [
@@ -24,6 +26,6 @@ class User extends Authenticatable
 
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'is_admin' => 'boolean', // Cast is_admin as boolean
+        'is_admin' => 'boolean',
     ];
 }
