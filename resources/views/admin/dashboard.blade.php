@@ -16,5 +16,6 @@
     </form>
 
     <a href="{{ route('admin.user_manage') }}" class="btn btn-primary">User Manage</a>
+    <a href="{{ route('admin.task_manage') }}" class="btn btn-secondary">Task Manage</a>
 </body>
 </html>

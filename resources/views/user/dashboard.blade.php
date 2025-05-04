@@ -13,5 +13,14 @@
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
+
+    <h2>Your Assigned Tasks</h2>
+    <ul>
+        @forelse (auth()->user()->tasks as $task)
+            <li>{{ $task->task }}</li>
+        @empty
+            <li>No tasks assigned yet.</li>
+        @endforelse
+    </ul>
 </body>
 </html>
