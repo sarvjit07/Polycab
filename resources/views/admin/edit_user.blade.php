@@ -24,14 +24,19 @@
             <input type="text" id="phone" name="phone" value="{{ $user->phone }}" required>
         </div>
         <div>
-            <label for="role">Role:</label>
-            <select id="role" name="role" required>
-                <option value="student" {{ $user->role == 'student' ? 'selected' : '' }}>Student</option>
-                <option value="teacher" {{ $user->role == 'teacher' ? 'selected' : '' }}>Teacher</option>
-                <option value="boy" {{ $user->role == 'boy' ? 'selected' : '' }}>Boy</option>
-                <option value="girl" {{ $user->role == 'girl' ? 'selected' : '' }}>Girl</option>
-            </select>
-        </div>
+    <label for="role">Role:</label>
+    <select id="role" name="role" required>
+        <option value="Admin" {{ $user->role == 'Admin' ? 'selected' : '' }}>Admin</option>
+        <option value="Project Manager" {{ $user->role == 'Project Manager' ? 'selected' : '' }}>Project Manager</option>
+        <option value="Site Engineer" {{ $user->role == 'Site Engineer' ? 'selected' : '' }}>Site Engineer</option>
+        <option value="Surveyor" {{ $user->role == 'Surveyor' ? 'selected' : '' }}>Surveyor</option>
+        <option value="ROW Coordinator" {{ $user->role == 'ROW Coordinator' ? 'selected' : '' }}>ROW Coordinator</option>
+        <option value="Quality Inspector" {{ $user->role == 'Quality Inspector' ? 'selected' : '' }}>Quality Inspector</option>
+        <option value="User" {{ $user->role == 'User' ? 'selected' : '' }}>User</option>
+        <option value="Viewer" {{ $user->role == 'Viewer' ? 'selected' : '' }}>Viewer</option>
+    </select>
+</div>
+
         <button type="submit">Update User</button>
     </form>
 </body>

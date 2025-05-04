@@ -32,7 +32,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => 'required|string|max:15',
-            'role' => 'required|string|in:student,teacher,boy,girl',
+            'role' => 'required|string|in:Admin,Project Manager,Site Engineer,Surveyor,ROW Coordinator,Quality Inspector,User,Viewer',
             'password' => 'required|string|min:4|confirmed',
         ]);
 
@@ -60,7 +60,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
             'phone' => 'required|string|max:15',
-            'role' => 'required|string|in:student,teacher,boy,girl',
+            'role' => 'required|string|in:Admin,Project Manager,Site Engineer,Surveyor,ROW Coordinator,Quality Inspector,User,Viewer',
         ]);
 
         $user = User::findOrFail($id);
