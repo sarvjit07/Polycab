@@ -72,7 +72,7 @@
 </style>
 
 <div class="form-container">
-  <h1>Add New User</h1>
+  <h1 >Add New User</h1>
   <a href="{{ route('admin.user_manage') }}" class="back-button">
     &#8592;
   </a>
