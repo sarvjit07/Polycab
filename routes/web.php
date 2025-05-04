@@ -22,6 +22,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/create_user', [UserController::class, 'create'])->name('admin.create_user');
     Route::post('/admin/store_user', [UserController::class, 'store'])->name('admin.store_user');
 
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/users', [UserController::class, 'index'])->name('user_manage');
+        Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('edit_user');
+        Route::put('/users/{id}', [UserController::class, 'update'])->name('update_user');
+        Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('delete_user');
+    });
+
     Route::get('/user/dashboard', function () {
         return view('user.dashboard');
     })->name('user.dashboard');
